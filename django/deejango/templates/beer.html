@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="beerslist">
+	<h2>A list of beers in my database of beers:</h2>
+	{% for beer in beers %}
+		<p><a href="/beer/{{ beer.slug }}/">{{ beer }}</a></p>
+	{% endfor %}
+	<h2>And breweries:</h2>
+	{% for brewery in breweries %}
+	<p><a href="/breweries/{{ brewery.slug }}/">{{ brewery }}</a></p>
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

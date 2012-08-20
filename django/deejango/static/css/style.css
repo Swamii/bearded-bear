@@ -1,0 +1,176 @@
+html {
+	background: #deefff;
+	background: -moz-linear-gradient(top, #deefff 0%, #98bede 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#deefff), color-stop(100%,#98bede));
+	background: -webkit-linear-gradient(top, #deefff 0%,#98bede 100%);
+	background: -o-linear-gradient(top, #deefff 0%,#98bede 100%);
+	background: -ms-linear-gradient(top, #deefff 0%,#98bede 100%);
+	background: linear-gradient(to bottom, #deefff 0%,#98bede 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#98bede',GradientType=0 );
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+}
+
+#page-container {
+	width: 1000px;
+	margin: auto;
+	background: #e1ffff;
+	background: -moz-linear-gradient(left, #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #c8eefb 84%, #b1d8f5 99%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e1ffff), color-stop(7%,#e1ffff), color-stop(12%,#e1ffff), color-stop(84%,#c8eefb), color-stop(99%,#b1d8f5));
+	background: -webkit-linear-gradient(left, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#c8eefb 84%,#b1d8f5 99%);
+	background: -o-linear-gradient(left, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#c8eefb 84%,#b1d8f5 99%);
+	background: -ms-linear-gradient(left, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#c8eefb 84%,#b1d8f5 99%);
+	background: linear-gradient(to right, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#c8eefb 84%,#b1d8f5 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 );
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+#header {
+	height: 150px;
+	background: #ffa84c;
+	background: -moz-linear-gradient(left, #ffa84c 0%, #ffa84c 19%, #ffa84c 30%, #ff7b0d 70%, #ff7b0d 77%, #ff7b0d 85%, #ff7b0d 89%, #ff7b0d 94%, #ff7b0d 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffa84c), color-stop(19%,#ffa84c), color-stop(30%,#ffa84c), color-stop(70%,#ff7b0d), color-stop(77%,#ff7b0d), color-stop(85%,#ff7b0d), color-stop(89%,#ff7b0d), color-stop(94%,#ff7b0d), color-stop(100%,#ff7b0d));
+	background: -webkit-linear-gradient(left, #ffa84c 0%,#ffa84c 19%,#ffa84c 30%,#ff7b0d 70%,#ff7b0d 77%,#ff7b0d 85%,#ff7b0d 89%,#ff7b0d 94%,#ff7b0d 100%);
+	background: -o-linear-gradient(left, #ffa84c 0%,#ffa84c 19%,#ffa84c 30%,#ff7b0d 70%,#ff7b0d 77%,#ff7b0d 85%,#ff7b0d 89%,#ff7b0d 94%,#ff7b0d 100%);
+	background: -ms-linear-gradient(left, #ffa84c 0%,#ffa84c 19%,#ffa84c 30%,#ff7b0d 70%,#ff7b0d 77%,#ff7b0d 85%,#ff7b0d 89%,#ff7b0d 94%,#ff7b0d 100%);
+	background: linear-gradient(to right, #ffa84c 0%,#ffa84c 19%,#ffa84c 30%,#ff7b0d 70%,#ff7b0d 77%,#ff7b0d 85%,#ff7b0d 89%,#ff7b0d 94%,#ff7b0d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=1 );
+}
+
+#content {
+	width: 650px;
+	float: left;
+}
+
+#content .padding {
+	padding: 20px;
+}
+
+#sidebar {
+	width: 350px;
+	float: right;
+}
+
+#sidebar .padding {
+	padding: 20px;
+}
+
+#footer {
+	clear: both;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 13px 25px;
+	line-height: 18px;
+	font-size: 14px;
+}
+
+#content p {
+	margin: 0;
+	padding: 0;
+}
+
+#blog_title a {
+	color: black;
+}
+
+#blog_created p {
+	font-size: 12px;
+	border-bottom: 1px solid #ccc;
+}
+
+#blog_body {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#sidebar p {
+	margin: 0;
+	padding 0;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	margin: 0;
+}
+
+#nav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	background-color: brown;
+}
+
+ul#nav_ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul#nav_ul li {
+	display: inline;
+	font-size: 20px;
+	color: white;
+}
+
+ul#nav_ul a {
+	text-decoration: none;
+	color: white;
+}
+
+
+ul#nav_ul a:hover {
+	text-decoration: underline;
+}
+
+#login {
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+
+#login p {
+	padding: 0 15px 0 0;
+	margin: 0;
+	font-size: 20px;
+}
+
+#login a {
+	color: black;
+}
+
+ul.errorlist {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+}

@@ -90,7 +90,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 <<<<<<< HEAD:mysite/mysite/settings.py
 SECRET_KEY = 'xxx'
 =======
-SECRET_KEY = '3hxao33ta(x#=$%!6&amp;*d+vz0n#3#u_8!d^r)=xj8-(e%v$28zu'
+SECRET_KEY = 'xxx'
 >>>>>>> Trying to make this work.:deejango/deejango/settings.py
 
 # List of callables that know how to import templates from various sources.

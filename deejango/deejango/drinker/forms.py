@@ -23,6 +23,14 @@ class RegistrationForm(ModelForm):
 			return username
 		raise forms.ValidationError("That username is already taken, please select another.")
 
+	def clean_email(self):
+		email = self.cleaned_data['email']
+		try:
+			User.objects.get(email=email)
+		except User.DoesNotExist:
+			return email
+		raise forms.ValidationError("That email is already in use. Click log in and request a new password.")
+
 	def clean(self):
 		if self.cleaned_data['password'] != self.cleaned_data['password1']:
 			raise forms.ValidationError("The passwords did not match. Please try again.")

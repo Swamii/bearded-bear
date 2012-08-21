@@ -32,9 +32,12 @@ class RegistrationForm(ModelForm):
 		raise forms.ValidationError("That email is already in use. Click log in and request a new password.")
 
 	def clean(self):
-		if self.cleaned_data['password'] != self.cleaned_data['password1']:
-			raise forms.ValidationError("The passwords did not match. Please try again.")
-		return self.cleaned_data
+		try:
+			if self.cleaned_data['password'] != self.cleaned_data['password1']:
+				raise forms.ValidationError("The passwords did not match. Please try again.")
+			return self.cleaned_data
+		except KeyError:
+			raise forms.ValidationError("Please enter a password.")
 
 
 class LoginForm(forms.Form):

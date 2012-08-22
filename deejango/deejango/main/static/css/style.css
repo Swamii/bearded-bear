@@ -87,14 +87,17 @@ body {
 	color: black;
 }
 
-#blog_created p {
+#blog_created p, #comment_created p {
 	font-size: 12px;
 	border-bottom: 1px solid #ccc;
 }
 
-#blog_body {
+#blog_body, #comment_body {
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+
+#comment_body {
 }
 
 #sidebar p {
@@ -183,5 +186,10 @@ label.error {
 }
 
 p.error {
+	color: red;
+}
+
+ul.errorlist li {
+	font-size: 75%;
 	color: red;
 }

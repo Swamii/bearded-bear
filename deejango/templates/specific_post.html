@@ -11,4 +11,29 @@
 		<p>{{ post.body|linebreaks }}</p>
 	</div>
 </div>
+<br>
+{% if post.comment_set.all %}
+<h3>Comments:</h3><br>
+{% for comment in post.comment_set.all %}
+<div id="blog_comment">
+	<div id="comment_created">
+		<p>{{ comment.created }} by {{ comment.author }}</p>
+	</div>
+	<div id="comment_body">
+		<p>{{ comment.body }}</p>
+	</div>
+</div>
+{% endfor %}
+<br>
+{% endif %}
+{% if user.is_authenticated %}
+<form action="" method="post">
+	{% csrf_token %}
+<label for="id_body">Write a comment:</label>
+<p>{{ form.body }}</p>
+<p><input type="submit" name="submit" value="Submit" /></p>
+</form>
+{% else %}
+<p>You need to be <a href="/login/">logged in</a> to comment</p>
+{% endif %}
 {% endblock %}

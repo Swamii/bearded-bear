@@ -29,15 +29,14 @@ class RegistrationForm(ModelForm):
 			User.objects.get(email=email)
 		except User.DoesNotExist:
 			return email
-		raise forms.ValidationError("That email is already in use. Click log in and request a new password.")
+		raise forms.ValidationError("Email already in use. Request a new password.")
 
-	def clean(self):
-		try:
-			if self.cleaned_data['password'] != self.cleaned_data['password1']:
-				raise forms.ValidationError("The passwords did not match. Please try again.")
-			return self.cleaned_data
-		except KeyError:
-			raise forms.ValidationError("Please enter a password.")
+	def clean_password(self):
+		password = self.cleaned_data['password']
+		password1 = self.cleaned_data.get('password1')
+		if password != password1:
+			raise forms.ValidationError("The passwords did not match. Try again.")
+		return self.cleaned_data
 
 
 class LoginForm(forms.Form):

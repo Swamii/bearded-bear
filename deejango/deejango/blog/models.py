@@ -10,4 +10,12 @@ class Post(models.Model):
 
 	def __unicode__(self):
 		return self.title
-	
+
+class Comment(models.Model):
+	author = models.ForeignKey(Drinker)
+	post = models.ForeignKey(Post)
+	body = models.TextField()
+	created = models.DateTimeField(auto_now_add=True)
+
+	def __unicode__(self):
+		return self.body

@@ -2,42 +2,33 @@
 {% block content %}
 <form action="" method="post">
 {% csrf_token %}
-{% if form.errors %}
-<h3>Please correct the following fields:</h3>
-{% if form.username.errors %}<p class="error">{{ form.username.errors }}</p>{% endif %}
-{% if form.email.errors %}<p class="error">{{ form.email.errors }}</p>{% endif %}	
-{% if form.name.errors %}<p class="error">{{ form.name.errors }}</p>{% endif %}
-{% if form.birthday.errors %}<p class="error">{{ form.birthday.errors }}</p>{% endif %}
-{% if form.password.errors %}<p class="error">{{ form.password.errors }}</p>{% endif %}
-{% if form.password1.errors %}<p class="error">{{ form.password1.errors }}</p>{% endif %}
-<br>
-{% endif %}
 
-
-<div class="register_div">
-	<p><label for="username"{% if form.username.errors %} class="error"{% endif %}>Username:</label></p>
-	<p>{{ form.username }}</p>
-</div>
-<div class="register_div">
-	<p><label for="email"{% if form.email.errors %} class="error"{% endif %}>E-mail:</label></p>
-	<p>{{ form.email }}</p>
-</div>
-<div class="register_div">
-	<p><label for="name"{% if form.name.errors %} class="error"{% endif %}>Name:</label></p>
-	<p>{{ form.name }}</p>
-</div>
-<div class="register_div">
-	<p><label for="birthday"{% if form.birthday.errors %} class="error"{% endif %}>Birthday:</label></p>
-	<p>{{ form.birthday }}</p>
-</div>
-<div class="register_div">
-	<p><label for="password"{% if form.password.errors %} class="error"{% endif %}>Password:</label></p>
-	<p>{{ form.password }}</p>
-</div>
-<div class="register_div">
-	<p><label for="password1"{% if form.password1.errors %} class="error"{% endif %}>Repeat password:</label></p>
-	<p>{{ form.password1 }}</p>
-</div>
+<table>
+<tr>	
+	<td><label for="username">Username:</label></td>
+	<td>{{ form.username }}</td><td>{{ form.username.errors }}</td>
+</tr>
+<tr>
+	<td><label for="email">E-mail:</label></td>
+	<td>{{ form.email }}</td><td>{{ form.email.errors }}</td>
+</tr>
+<tr>
+	<td><label for="name">Name:</label></td>
+	<td>{{ form.name }}</td><td>{{ form.name.errors }}</td>
+</tr>
+<tr>
+	<td><label for="birthday">Birthday:</label></td>
+	<td>{{ form.birthday }}</td><td>{{ form.birthday.errors }}</td>
+</tr>
+<tr>
+	<td><label for="password">Password:</label></td>
+	<td>{{ form.password }}</td><td>{{ form.password.errors }}</td>
+</tr>
+<tr>
+	<td><label for="password1">Repeat:</label></td>
+	<td>{{ form.password1 }}</td><td>{{ form.password1.errors }}</td>
+</tr>
+</table>
 <p><input type="submit" alt="register"></p>
 </form>
 

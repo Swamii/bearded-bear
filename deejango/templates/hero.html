@@ -24,7 +24,7 @@
     <!-- Le fav and touch icons -->
   </head>
 
-  <body class="{% block body_tag %}home{% endblock %}">
+  <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -37,40 +37,29 @@
           <a class="brand" href="/">Swami</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="home"><a href="/">Home</a></li>
-              <li class="beer"><a href="/beer">Beer</a></li>
-              <li class="test_area"><a href="/test_area">Bootstrap</a></li>
-              <li class="test_area_two"><a href="/test_area_two">Edit</a></li>
-              <li class="blog"><a href="/blog">Blog</a></li>
-            </ul>
-            {% if user.is_authenticated %}
-            <ul class="nav pull-right">
-              <li class="dropdown pull-right">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} <b class="caret"></b></a>
+              <li><a href="/">Home</a></li>
+              <li><a href="/beer">Beer</a></li>
+              <li><a href="/test_area">Bootstrap</a></li>
+              <li><a href="/test_area_two">Edit</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/profile">Profile</a></li>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
-                  <!--<li class="nav-header">Nav header</li>-->
-                  <li><a href="/logout">Log out</a></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
                 </ul>
               </li>
             </ul>
-              
-            {% else %}
-            <ul class="nav">
-              <li><a href="/register">Register</a></li>
-            </ul>
-            <form class="navbar-form pull-right" method="post" action="/login/">
-              {% csrf_token %}
-              <input class="span2" name="username" type="text" placeholder="User" id="id_username">
-              <input class="span2" name="password" type="password" placeholder="Password" id="id_password">
-              <input type="submit" class="btn" value="Log in" />
-              <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="User">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
             </form>
-            {% endif %}
-
-            
-            
           </div><!--/.nav-collapse -->
         </div><!--end container-->
       </div>
@@ -127,12 +116,12 @@
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
       </div>
-
-      {% endblock %}
       <hr>
-          <footer>
-            <p>Website made by <a href="mailto:swami@swami.webfactional.com">Akseli Nelander</a>, with lots of help from <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>. Powered by <a href="https://www.djangoproject.com/">Django</a>.</p>
-          </footer>
+      {% endblock %}
+
+      <footer>
+        <p>Website made by <a href="mailto:swami@swami.webfactional.com">Akseli Nelander</a>, with lots of help from <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>. Powered by <a href="https://www.djangoproject.com/">Django</a>.</p>
+      </footer>
 
     </div> <!-- /container -->
 

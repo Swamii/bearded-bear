@@ -56,7 +56,7 @@ def login_request(request):
 			drinker = authenticate(username=username, password=password)
 			if drinker is not None:
 				login(request, drinker)
-				return HttpResponseRedirect('/profile/')
+				return HttpResponseRedirect('/')
 			else:
 				return HttpResponseRedirect('/login/')
 		else:

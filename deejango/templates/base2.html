@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css"
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery-ui-1.8.23.custom.css">
-	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style2.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 	<title>{% block title %}Swamizone{% endblock %}</title>
 </head>
 <body>
-	<div id="navbar navbar-inverse navbar-fixed-top">
-		<div id="navbar-inner">
-			<div id="container">
+	<div id="page-container">
+		<div id="nav">
+			<div id="login">
 
 				{% if user.is_authenticated %}
-					<a href="/profile/">{{ user.username }}</a> - <a href="/logout/">Log out</a></p>
+					<p><a href="/profile/">{{ user.username }}</a> - <a href="/logout/">Log out</a></p>
 				{% else %}
-					<a href="/register/">Register</a> - <a href="/login/">Log in</a>
+					<p><a href="/register/">Register</a> - <a href="/login/">Log in</a></p>
 				{% endif %}
-				<div class="nav-collapse collapse">
-					<ul class="nav">
-						<li class=""><a href="/">Home</a></li>
-						<li class=""><a href="/beer">Beer</a></li>
-						<li class=""><a href="/test_area">Testing area</a></li>
-						<li class=""><a href="/test_area_two">Edit</a></li>
-						<li class=""><a href="/blog">Blog</a></li>
-					</ul>
-				</div>
+
+			</div>
+			<ul id="nav_ul">
+				<li><a href="/">Home</a> - </li>
+				<li><a href="/beer">Beer</a> - </li>
+				<li><a href="/test_area">Testing area</a> - </li>
+				<li><a href="/test_area_two">Edit</a> - </li>
+				<li><a href="/blog">Blog</a></li>
+			</ul>
+		</div>
+
+		<div id="header">
+			{% block header %}
+			{% endblock %}
+		</div>
+
+		<div id="content">
+			<div class="padding">
+				{% block content %}
+				<h2>Recent site updates:</h2>
+				<p>GRADIEEEENTSSSS!!! EVERYWHEEERREEEEE :):):):)</p>
+				<p>GRADIEEEENTSSSS!!! EVERYWHEEERREEEEE :):):):)</p>
+				<p>GRADIEEEENTSSSS!!! EVERYWHEEERREEEEE :):):):)</p>
+				<p>GRADIEEEENTSSSS!!! EVERYWHEEERREEEEE :):):):)</p>
+				<p>GRADIEEEENTSSSS!!! EVERYWHEEERREEEEE :):):):)</p>
+				<p>GRADIEEEENTSSSS!!! EVERYWHEEERREEEEE :):):):)</p>
+				<h2>In the news:</h2>
+				<p>I like coffee...</p><p>I like coffee...</p><p>I like coffee...</p><p>I like coffee...</p><p>I like coffee...</p><p>I like coffee...</p>
+				{% endblock %}
 			</div>
 		</div>
-	</div>
 
+		<div id="sidebar">
+			<div class="padding">
+				{% block sidebar %}
+				<p>Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... Sidebar... </p>
+				{% endblock %}
+			</div>
+		</div>
+
+		<div id="footer">
+			<p>Website made by <a href="mailto:swami@swami.webfactional.com">Akseli Nelander</a>. Many thanks to CSS, Javascript, HTML, Django and my mom for making this happen!</p> 
+			{% block footer %}
+			{% endblock %}
+		</div>
 
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.23.custom.min.js"></script>
 		<script type="text/javascript" src="{{ STATIC_URL }}js/script.js"></script>
+	</div>
 </body>
 </html>

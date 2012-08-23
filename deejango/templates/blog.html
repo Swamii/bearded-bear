@@ -1,18 +1,28 @@
 {% extends 'base.html' %}
+
 {% block content %}
-{% if posts.has_previous %}<a href="?page={{ posts.previous_page_number }}">Previous Page</a>{% endif %}
-{% for p in posts %}
-<div id="blog_post">
-<div id="blog_title">
-<h2><a href="/blog/{{ p.slug }}">{{ p.title }}</a></h2>
-</div>
-<div id="blog_created">
-<p>Posted on {{ p.created }} by {{ p.author }}</p>
-</div>
-<div id="blog_body">
-<p>{{ p.body|linebreaks }}</p>
-</div>
-</div>
+<div class="span8">
+	{% if posts.has_previous %}<a href="?page={{ posts.previous_page_number }}">Previous Page</a>{% endif %}
+	{% for p in posts %}
+	<div id="blog_post">
+		<div id="blog_title">
+			<h2><a href="/blog/{{ p.slug }}">{{ p.title }}</a></h2>
+		</div>
+		<div id="blog_created">
+			<p>Posted on {{ p.created }} by {{ p.author }}</p>
+		</div>
+		<div id="blog_body">
+			<p>{{ p.body|linebreaks }}</p>
+		</div>
+	</div>
 {% endfor %}
 {% if posts.has_next %}<a href="?page={{ posts.next_page_number }}">Next Page</a>{% endif %}
+</div>
+{% endblock %}
+
+
+
+{% block sidebar %}
+<h2>About my blog</h2>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin congue dictum metus, nec gravida mauris pulvinar porttitor. Morbi elementum lacus egestas nunc lobortis gravida. Donec quis malesuada nulla. Donec metus dolor, ornare nec suscipit at, vulputate id odio. Donec id ligula arcu. Duis in augue libero. Donec libero libero, imperdiet non tempus ut, vehicula eget arcu. Morbi ultrices placerat ligula eget dapibus. Aenean ultrices cursus sagittis. Maecenas fermentum, nunc eget sollicitudin euismod, orci ipsum imperdiet dui, et luctus sem mi ut massa. Aliquam erat volutpat. Phasellus felis nibh, bibendum et tincidunt sed, sagittis sagittis enim. Duis ultricies tristique dolor, vel luctus mauris dapibus ac. Praesent eleifend commodo dolor at iaculis. Vestibulum non velit nunc, lacinia rhoncus lectus. Pellentesque hendrerit tempus felis vitae venenatis.
 {% endblock %}

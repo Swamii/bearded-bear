@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="span8">
 <div id="blog_post">
 	<div id="blog_title">
 		<h2>{{ post.title }}</h2>
@@ -30,10 +31,11 @@
 <form action="" method="post">
 	{% csrf_token %}
 <label for="id_body">Write a comment:</label>
-<p>{{ form.body }}</p>
-<p><input type="submit" name="submit" value="Submit" /></p>
+<textarea id="id_body" rows="10" cols="100" name="body"></textarea>
+<p><input type="submit" name="submit" value="Submit" class="btn btn-primary" /></p>
 </form>
 {% else %}
 <p>You need to be <a href="/login/">logged in</a> to comment</p>
 {% endif %}
+</div>
 {% endblock %}

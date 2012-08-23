@@ -9,7 +9,7 @@ def index(request):
                               context_instance=RequestContext(request))
 
 def test_area(request):
-    return render_to_response('hero.html',
+    return render_to_response('base2.html',
                               locals(),
                               context_instance=RequestContext(request))
 

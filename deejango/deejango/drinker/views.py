@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.template import RequestContext
 from deejango.drinker.forms import RegistrationForm, LoginForm
 from deejango.drinker.models import Drinker
@@ -56,7 +56,7 @@ def login_request(request):
 			drinker = authenticate(username=username, password=password)
 			if drinker is not None:
 				login(request, drinker)
-				return HttpResponseRedirect('/')
+				return HttpResponseRedirect(request.get_full_path())
 			else:
 				return HttpResponseRedirect('/login/')
 		else:
